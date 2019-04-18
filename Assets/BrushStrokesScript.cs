@@ -591,8 +591,8 @@ public class BrushStrokesScript : MonoBehaviour {
             foreach (var character in Bomb.GetSerialNumber())
                 if ("RADI4T07".Contains(character))
                     keyNum += 10;
-            keyNum += 5 * Bomb.GetBatteryCount(Battery.AA);
-            keyNum -= 5 * Bomb.GetBatteryCount(Battery.D);
+            keyNum += 5 * Bomb.GetBatteryHolderCount(2);
+            keyNum -= 5 * Bomb.GetBatteryHolderCount(1);
             if (keyNum < 0)
                 keyNum *= -1;
         }
