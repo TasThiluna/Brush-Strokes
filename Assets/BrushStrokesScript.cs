@@ -945,16 +945,26 @@ public class BrushStrokesScript : MonoBehaviour {
             {
                 btnRenderer.material = btnColors[13];
             }
+            for (int i = 0; i < 9; i++)
+                colorblindText[i].text = "SOLVED!!!"[i].ToString();
         }
 
         else
         {
             GenerateModule();
+            for (int i = 0; i < 9; i++)
+                colorblindText[i].text = "WROOOOONG"[i].ToString();
         }
         
         StartCoroutine(TurnOnStrokes());
 
         btnSelected = 99;
+
+        for (int i = 0; i < 4; i++)
+        {
+            for (int x = 0; x < 6; x++)
+                gaps[i, x] = false;
+        }
     }
 
     IEnumerator Count()
@@ -966,9 +976,6 @@ public class BrushStrokesScript : MonoBehaviour {
     }
     IEnumerator TurnOnStrokes()
     {
-        for (int i = 0; i < 9; i++)
-            colorblindText[i].text = "SOLVED!!!"[i].ToString();
-
         if (solved)
         {
             for (int i = 0; i < 6; i++)
