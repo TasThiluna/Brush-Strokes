@@ -5,7 +5,8 @@ using KModkit;
 using System.Linq;
 using System.Collections;
 
-public class BrushStrokesScript : MonoBehaviour {
+public class BrushStrokesScript : MonoBehaviour
+{
 
     public KMBombModule Module;
     public KMAudio Audio;
@@ -16,7 +17,7 @@ public class BrushStrokesScript : MonoBehaviour {
     public Material[] btnColors;
     public SpriteRenderer[] horizontalStrokes, verticalStrokes, tlbrStrokes, trblStrokes;
     public TextMesh[] colorblindText;
-    
+
     private static int _moduleIdCounter = 1;
     private int _moduleId;
     private bool solved = false;
@@ -252,7 +253,8 @@ public class BrushStrokesScript : MonoBehaviour {
 
     private readonly static string[] colorblindLetters = { "R", "O", "Y", "L", "G", "C", "S", "B", "P", "M", "N", "W", "A", "K", "I" };
 
-    void Start () {
+    void Start()
+    {
         _moduleId = _moduleIdCounter++;
         Module.OnActivate += Activate;
 
@@ -718,7 +720,7 @@ public class BrushStrokesScript : MonoBehaviour {
         keyNum %= 35;
 
         DebugMsg("The key number is " + (keyNum + 1) + ".");
-        
+
         if (colorblindActive)
         {
             DebugMsg("Colorblind mode is active! Setting colorblind letters...");
@@ -894,7 +896,7 @@ public class BrushStrokesScript : MonoBehaviour {
             btnSelected = 99;
         }
     }
-   
+
     void DebugMsg(string msg)
     {
         Debug.LogFormat("[Brush Strokes #{0}] {1}", _moduleId, msg);
@@ -945,26 +947,16 @@ public class BrushStrokesScript : MonoBehaviour {
             {
                 btnRenderer.material = btnColors[13];
             }
-            for (int i = 0; i < 9; i++)
-                colorblindText[i].text = "SOLVED!!!"[i].ToString();
         }
 
         else
         {
             GenerateModule();
-            for (int i = 0; i < 9; i++)
-                colorblindText[i].text = "WROOOOONG"[i].ToString();
         }
-        
+
         StartCoroutine(TurnOnStrokes());
 
         btnSelected = 99;
-
-        for (int i = 0; i < 4; i++)
-        {
-            for (int x = 0; x < 6; x++)
-                gaps[i, x] = false;
-        }
     }
 
     IEnumerator Count()
@@ -976,6 +968,9 @@ public class BrushStrokesScript : MonoBehaviour {
     }
     IEnumerator TurnOnStrokes()
     {
+        for (int i = 0; i < 9; i++)
+            colorblindText[i].text = "SOLVED!!!"[i].ToString();
+
         if (solved)
         {
             for (int i = 0; i < 6; i++)
@@ -1023,6 +1018,6 @@ public class BrushStrokesScript : MonoBehaviour {
             for (int i = 0; i < 4; i++)
                 trblStrokes[i].enabled = false;
         }
-        
+
     }
 }
