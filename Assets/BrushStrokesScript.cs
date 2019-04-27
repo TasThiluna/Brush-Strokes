@@ -603,8 +603,8 @@ public class BrushStrokesScript : MonoBehaviour
         {
             keyNum = Bomb.GetBatteryHolderCount() - Bomb.GetIndicators().Count() + Bomb.GetBatteryCount() * Bomb.GetPortCount() - Bomb.GetPortPlateCount();
             keyNum %= 5;
-            if (keyNum == 0)
-                keyNum = 5;
+            while (keyNum <= 0)
+                keyNum += 5;
 
             int[] temps = { 250, 160, 200, 180, 180 };
             keyNum = temps[keyNum - 1];
@@ -726,6 +726,11 @@ public class BrushStrokesScript : MonoBehaviour
             DebugMsg("Colorblind mode is active! Setting colorblind letters...");
             for (int i = 0; i < 9; i++)
                 colorblindText[i].text = colorblindLetters[colors[i]];
+        }
+        else
+        {
+            for (int i = 0; i < 9; i++)
+                colorblindText[i].text = "";
         }
     }
 
@@ -940,6 +945,9 @@ public class BrushStrokesScript : MonoBehaviour
 
         if (!nopeThatsWrong)
         {
+            for (int i = 0; i < 9; i++)
+                colorblindText[i].text = "SOLVED!!!"[i].ToString();
+
             Module.HandlePass();
             solved = true;
             DebugMsg("Congratulations, that was right. Module solved.");
@@ -950,9 +958,7 @@ public class BrushStrokesScript : MonoBehaviour
         }
 
         else
-        {
             GenerateModule();
-        }
 
         StartCoroutine(TurnOnStrokes());
 
@@ -968,8 +974,6 @@ public class BrushStrokesScript : MonoBehaviour
     }
     IEnumerator TurnOnStrokes()
     {
-        for (int i = 0; i < 9; i++)
-            colorblindText[i].text = "SOLVED!!!"[i].ToString();
 
         if (solved)
         {
