@@ -249,7 +249,6 @@ public class BrushStrokesScript : MonoBehaviour
     };
 
     private int btnSelected = 99;
-    private bool submitting = false, held = false;
     private bool colorblindActive = false;
 
     private readonly static string[] colorblindLetters = { "R", "O", "Y", "L", "G", "C", "S", "B", "P", "M", "N", "W", "A", "K", "I" };
@@ -286,20 +285,14 @@ public class BrushStrokesScript : MonoBehaviour
                     btnPress(j);
                 btnSelectables[j].AddInteractionPunch();
                 Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, Module.transform);
+                StopAllCoroutines();
                 StartCoroutine(Count());
-                held = true;
                 return false;
             };
 
             btnSelectables[i].OnInteractEnded += delegate ()
             {
                 Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonRelease, Module.transform);
-                held = false;
-                if (submitting == true)
-                {
-                    if (j == 4)
-                        Submit();
-                }
             };
         }
     }
@@ -945,7 +938,9 @@ public class BrushStrokesScript : MonoBehaviour
                 }
             }
         }
-
+        
+        StartCoroutine(TurnOnStrokes());
+        
         if (!nopeThatsWrong)
         {
             for (int i = 0; i < 9; i++)
@@ -961,20 +956,24 @@ public class BrushStrokesScript : MonoBehaviour
         }
 
         else
-            GenerateModule();
+        {
+            for (int i = 0; i < 6; i++)
+                for (int x = 0; x < 4; x++)
+                    gaps[x, i] = false;
 
-        StartCoroutine(TurnOnStrokes());
+            GenerateModule();
+        }
 
         btnSelected = 99;
     }
-
+    
     IEnumerator Count()
     {
-        submitting = false;
-        yield return new WaitForSeconds(2);
-        if (held)
-            submitting = true;
+        yield return new WaitForSeconds(5);
+
+        Submit();
     }
+
     IEnumerator TurnOnStrokes()
     {
 
