@@ -4,6 +4,7 @@ using Random = UnityEngine.Random;
 using KModkit;
 using System.Linq;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 public class BrushStrokesScript : MonoBehaviour
 {
@@ -530,7 +531,7 @@ public class BrushStrokesScript : MonoBehaviour
 
         else if (colors[4] == 6) // if center point is sky...
         {
-            keyNum += Bomb.CountUniquePorts() * 7;
+            keyNum = Bomb.CountUniquePorts() * 7;
             int indicatorAmount = 0;
 
             foreach (var indicator in Bomb.GetOnIndicators())
@@ -579,9 +580,12 @@ public class BrushStrokesScript : MonoBehaviour
 
         else if (colors[4] == 8) // if center point is purple...
         {
-            char[] tennisTable = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+            char[] numbers = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
-            keyNum = Array.IndexOf(tennisTable, Bomb.GetSerialNumber()[0]);
+            if (numbers.Contains(Bomb.GetSerialNumber()[0]))
+                keyNum = Bomb.GetSerialNumberNumbers().First();
+            else
+                keyNum = Array.IndexOf(literallyJustTheEntireAlphabet, Bomb.GetSerialNumber()[0]) + 6;
         }
 
         else if (colors[4] == 9) // if center point is magenta...
@@ -714,6 +718,11 @@ public class BrushStrokesScript : MonoBehaviour
         if (keyNum < 0)
             keyNum *= -1;
         keyNum %= 35;
+
+        if (keyNum == 28)
+        {
+            keyNum = 0;
+        }
 
         DebugMsg("The key number is " + (keyNum + 1) + ".");
 
@@ -907,7 +916,7 @@ public class BrushStrokesScript : MonoBehaviour
     {
         bool nopeThatsWrong = false;
         string firstPart;
-
+        
         for (int i = 0; i < 4; i++)
         {
             for (int x = 0; x < 6; x++)
@@ -961,6 +970,7 @@ public class BrushStrokesScript : MonoBehaviour
                 for (int x = 0; x < 4; x++)
                     gaps[x, i] = false;
 
+            keyNum = 0;
             GenerateModule();
         }
 
@@ -1025,5 +1035,108 @@ public class BrushStrokesScript : MonoBehaviour
                 trblStrokes[i].enabled = false;
         }
 
+    }
+
+    //twitch plays
+    private bool stringIsDigit(string s)
+    {
+        int temp = 0;
+        int.TryParse(s, out temp);
+        if (temp != 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private bool inputIsValid(string cmd)
+    {
+        char[] validchars = { ' ', ',', ';', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+        char[] cmdchars = cmd.ToCharArray();
+        for (int j = 7; j < cmdchars.Length; j++)
+        {
+            if (!validchars.Contains(cmdchars[j]))
+            {
+                return false;
+            }
+        }
+        string[] parameters = cmd.Split(' ', ';', ',');
+        if (parameters.Length % 2 == 0)
+        {
+            return false;
+        }
+        for (int i = 1; i < parameters.Length; i++)
+        {
+            if (!stringIsDigit(parameters[i]))
+            {
+                return false;
+            }
+            else
+            {
+                int temp = 0;
+                int.TryParse(parameters[i], out temp);
+                if (!((temp >= 1) && (temp <= 9)))
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+#pragma warning disable 414
+    private readonly string TwitchHelpMessage = @"!{0} connect 1 3;3 9;9 7 [Connects the specified points (in this example they make a backwards C), points are in reading order 1-9] | !{0} colorblind [Enables colorblind mode]";
+#pragma warning restore 414
+
+    IEnumerator ProcessTwitchCommand(string command)
+    {
+        if (Regex.IsMatch(command, @"^\s*colorblind\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
+        {
+            yield return null;
+            if (colorblindActive == true)
+            {
+                colorblindActive = false;
+            }
+            else
+            {
+                colorblindActive = true;
+            }
+            if (colorblindActive)
+            {
+                DebugMsg("Colorblind mode is active! Setting colorblind letters...");
+                for (int i = 0; i < 9; i++)
+                    colorblindText[i].text = colorblindLetters[colors[i]];
+            }
+            else
+            {
+                for (int i = 0; i < 9; i++)
+                    colorblindText[i].text = "";
+            }
+            yield break;
+        }
+        string[] parameters = command.Split(' ', ';', ',');
+        if (Regex.IsMatch(parameters[0], @"^\s*connect\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
+        {
+            if (inputIsValid(command) && parameters.Length != 1)
+            {
+                yield return null;
+                for (int i = 0; i < parameters.Length; i++)
+                {
+                    if (i != 0)
+                    {
+                        int temp = 0;
+                        int.TryParse(parameters[i], out temp);
+                        temp--;
+                        btnPress(temp);
+                        yield return new WaitForSeconds(0.1f);
+                    }
+                }
+                StartCoroutine(Count());
+            }
+            yield break;
+        }
     }
 }
