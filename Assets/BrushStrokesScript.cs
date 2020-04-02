@@ -33,7 +33,7 @@ public class BrushStrokesScript : MonoBehaviour
     private bool[,] gaps = { { false, false, false, false, false, false },  // horizontal lines, in reading order
                              { false, false, false, false, false, false },  // vertical lines, in reading order
                              { false, false, false, false, false, false },  // tl-br diagonals, in reading order (there's only 4)
-                             { false, false, false, false, false, false }   // tr-bl diagonals, in reading order (there's only 4) 
+                             { false, false, false, false, false, false }   // tr-bl diagonals, in reading order (there's only 4)
                            };
     private readonly static bool[,,] symbols =
     {
@@ -421,7 +421,7 @@ public class BrushStrokesScript : MonoBehaviour
                 }
 
                 int even = 0, odd = 0;
-                    
+
                 if (firstNumber % 2 == 0)
                     even++;
                 else
@@ -739,7 +739,7 @@ public class BrushStrokesScript : MonoBehaviour
         else
         {
             btnSelectables[btnNum].AddInteractionPunch();
-            Audio.PlaySoundAtTransform("paint", Module.transform);
+            Audio.PlaySoundAtTransform("stroke" + Random.Range(1, 5), Module.transform);
             DebugMsg("You connected two points.");
 
             if (btnSelected == btnNum)
