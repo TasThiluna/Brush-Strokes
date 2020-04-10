@@ -385,8 +385,8 @@ public class BrushStrokesScript : MonoBehaviour
 
             int[,] tableTwo =
             {
-                { 252, 87 },
-                { 220, 155 }
+                { 220, 155 },
+                { 252, 87 }
             };
 
             if (Bomb.GetSerialNumberNumbers().Count() == 2)
