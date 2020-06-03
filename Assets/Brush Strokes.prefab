@@ -296,7 +296,6 @@ GameObject:
   - component: {fileID: 4150542053761762}
   - component: {fileID: 33124773869280616}
   - component: {fileID: 23266951614453568}
-  - component: {fileID: 95079666460590994}
   - component: {fileID: 114015176691846786}
   m_Layer: 0
   m_Name: Component_PuzzleBackground
@@ -496,8 +495,8 @@ GameObject:
   - component: {fileID: 114851581346399680}
   - component: {fileID: 114187609726364552}
   - component: {fileID: 114959796819332236}
+  - component: {fileID: 114712939128419416}
   - component: {fileID: 114777182900738578}
-  - component: {fileID: 114418736132495494}
   m_Layer: 0
   m_Name: Brush Strokes
   m_TagString: Untagged
@@ -1281,7 +1280,7 @@ Transform:
   m_GameObject: {fileID: 1250257894429786}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: -0.00000016292068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 4171037146270858}
   m_RootOrder: 2
@@ -1481,7 +1480,7 @@ Transform:
   m_GameObject: {fileID: 1304367648222724}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 4171037146270858}
   m_RootOrder: 1
@@ -2236,7 +2235,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 26cdee844cb231740941635a5e5962c7, type: 2}
+  - {fileID: 2100000, guid: 2a7420f3b0169f9418dcab9e9a7f81f0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3031,7 +3030,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1250257894429786}
-  m_Mesh: {fileID: 4300000, guid: 1c46642b7f907d844bcdfcca8625afdd, type: 3}
+  m_Mesh: {fileID: 4300000, guid: e419e733a0e820a4dae92a3903e84575, type: 3}
 --- !u!33 &33130363892080914
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -3192,7 +3191,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304367648222724}
-  m_Mesh: {fileID: 4300000, guid: 5ab6c3be308beaa47b558e81d501cf7c, type: 3}
+  m_Mesh: {fileID: 4300000, guid: fb5f25d425620e946a1765d7310793e0, type: 3}
 --- !u!33 &33966223829150074
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -3207,23 +3206,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1006542370550326}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &95079666460590994
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1250257894429786}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 1c46642b7f907d844bcdfcca8625afdd, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!102 &102040002632860008
 TextMesh:
   serializedVersion: 3
@@ -3900,18 +3882,6 @@ MonoBehaviour:
   AllowSelectionWrapY: 0
   ForceSelectionHighlight: 0
   ForceInteractionHighlight: 0
---- !u!114 &114418736132495494
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1372786457556416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1cfb889a07d5fd4e9baed7960bb397f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _colorblindMode: 0
 --- !u!114 &114446098501455212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4201,6 +4171,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShaderNames:
   - Sprites/Default
+--- !u!114 &114712939128419416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1372786457556416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cadefbb4e8c0c743893b8a7efee5ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colorblindMode: 0
 --- !u!114 &114744856500836976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4267,7 +4249,7 @@ MonoBehaviour:
   Module: {fileID: 114187609726364552}
   Audio: {fileID: 114851581346399680}
   Bomb: {fileID: 114959796819332236}
-  Colorblind: {fileID: 114418736132495494}
+  Colorblind: {fileID: 114712939128419416}
   btnSelectables:
   - {fileID: 114048048546698074}
   - {fileID: 114832354733401448}
