@@ -42,205 +42,205 @@ public class BrushStrokesScript : MonoBehaviour
             { false, true, true, true, true, true },
             { true, false, false, true, false, false },
             { false, false, false, false, false, false }
-        },// 1st symbol
+        }, // 1st symbol
         {
             { true, true, false, false, false, true },
             { true, true, true, true, true, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 2nd symbol
+        }, // 2nd symbol
         {
             { true, true, false, false, true, false },
             { true, true, true, true, true, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 3rd symbol
+        }, // 3rd symbol
         {
             { true, true, true, false, true, false },
             { false, true, true, true, true, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 4th symbol
+        }, // 4th symbol
         {
             { true, true, true, true, true, true },
             { false, false, true, true, false, false },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 5th symbol
+        }, // 5th symbol
         {
             { true, true, false, false, true, true },
             { false, true, true, false, true, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 6th symbol
+        }, // 6th symbol
         {
             { true, true, false, false, true, true },
             { true, true, true, true, true, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 7th symbol
+        }, // 7th symbol
         {
             { true, true, true, true, true, true },
             { true, false, false, true, false, false },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 8th symbol
+        }, // 8th symbol
         {
             { true, true, true, true, true, false },
             { false, false, true, true, false, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 9th symbol
+        }, // 9th symbol
         {
             { true, true, true, true, false, false },
             { true, false, false, true, false, false },
             { false, false, false, false, false, false },
             { false, false, false, true, false, false }
-        },// 10th symbol
+        }, // 10th symbol
         {
             { true, true, false, false, true, true },
             { false, false, false, false, false, false },
             { true, false, false, true, false, false },
             { false, true, true, false, false, false }
-        },// 11th symbol
+        }, // 11th symbol
         {
             { true, true, false, false, true, true },
             { false, false, false, false, false, false },
             { true, false, false, true, false, false },
             { false, false, false, false, false, false }
-        },// 12th symbol
+        }, // 12th symbol
         {
             { true, true, false, false, true, true },
             { false, false, true, false, false, false },
             { true, false, false, true, false, false },
             { false, false, false, false, false, false }
-        },// 13th symbol
+        }, // 13th symbol
         {
             { false, true, true, true, false, false },
             { true, false, false, true, false, true },
             { false, false, false, false, false, false },
             { true, false, false, false, false, false }
-        },// 14th symbol
+        }, // 14th symbol
         {
             { true, true, true, true, true, true },
             { true, false, true, true, false, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 15th symbol
+        }, // 15th symbol
         {
             { true, true, true, true, true, true },
             { true, false, false, false, false, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 16th symbol
+        }, // 16th symbol
         {
             { true, true, true, true, true, false },
             { false, false, true, true, true, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 17th symbol
+        }, // 17th symbol
         {
             { false, false, false, false, true, true },
             { true, false, true, true, false, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 18th symbol
+        }, // 18th symbol
         {
             { false, true, false, false, true, true },
             { true, true, true, true, true, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 19th symbol
+        }, // 19th symbol
         {
             { true, true, false, false, true, true },
             { true, false, true, true, false, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 20th symbol
+        }, // 20th symbol
         {
             { true, false, false, false, true, true },
             { true, true, true, true, true, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 21st symbol
+        }, // 21st symbol
         {
             { true, true, true, true, true, true },
             { false, false, true, false, false, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 22nd symbol
+        }, // 22nd symbol
         {
             { true, true, false, true, false, true },
             { true, false, true, true, true, false },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 23rd symbol
+        }, // 23rd symbol
         {
             { true, false, false, true, true, false },
             { true, true, true, true, true, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 24th symbol
+        }, // 24th symbol
         {
             { true, true, true, true, false, false },
             { false, true, false, true, false, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 25th symbol
+        }, // 25th symbol
         {
             { true, false, false, false, false, true },
             { true, true, true, true, true, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 26th symbol
+        }, // 26th symbol
         {
             { false, true, true, false, false, true },
             { true, true, true, true, true, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 27th symbol
+        }, // 27th symbol
         {
             { true, true, false, true, false, true },
             { true, false, true, true, true, false },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 28th symbol
+        }, // 28th symbol
         {
             { false, false, false, false, false, false },
             { true, false, true, true, false, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 29th symbol
+        }, // 29th symbol
         {
             { true, true, false, true, true, false },
             { true, false, false, true, true, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 30th symbol
+        }, // 30th symbol
         {
             { true, true, true, false, true, false },
             { false, true, true, true, false, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 31st symbol
+        }, // 31st symbol
         {
             { false, true, false, false, true, true },
             { true, true, true, true, false, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 32nd symbol
+        }, // 32nd symbol
         {
             { false, true, false, false, true, true },
             { false, true, true, false, false, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 31st symbol
+        }, // 31st symbol
         {
             { false, false, false, false, false, false },
             { false, true, false, false, true, false },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
-        },// 33rd symbol
+        }, // 33rd symbol
         {
             { false, false, false, false, false, false },
             { true, false, true, true, false, true },
@@ -497,35 +497,40 @@ public class BrushStrokesScript : MonoBehaviour
         else if (colors[4] == 5) // if center point is cyan...
         {
             if (Bomb.IsPortPresent(Port.Parallel))
-                keyNum += 1;
-            for (int i = 0; i < Bomb.GetSerialNumberLetters().Count(); i++)
-            {
-                if (vowels.Contains(Bomb.GetSerialNumberLetters().Skip(i).First()))
-                {
-                    keyNum += 1;
-                    break;
-                }
+                keyNum++;
+            keyNum %= 10;
 
-                if (i == Bomb.GetSerialNumberLetters().Count() - 1)
-                    keyNum += 2;
-            }
-            keyNum += 2;
+            if (Bomb.GetSerialNumberLetters().Any(x => "AEIOU".Contains(x)))
+                keyNum++;
+            else
+                keyNum += 2;
+            keyNum %= 10;
+
             if (Bomb.IsPortPresent(Port.Serial))
                 keyNum += 2;
+            keyNum %= 10;
+
+            keyNum += 2; // assume no modules are solved, so > half solved rule always applies (likewise, < half solved rule never applies)
+            keyNum %= 10;
 
             if (Bomb.IsIndicatorOn(Indicator.FRK))
-                keyNum = keyNum * 2 % 10 + 3;
-            if (Bomb.GetSerialNumberNumbers().Count() > Bomb.GetSerialNumberLetters().Count())
-                keyNum = keyNum * 2 % 10 + 4;
-            if (Bomb.GetSerialNumberNumbers().Last() % 2 == 0)
-                keyNum = keyNum * 2 % 10 + 5;
-            else
-                keyNum = keyNum * 3 % 10 + 8;
-            if (Bomb.IsIndicatorOff(Indicator.NSA))
-                keyNum = keyNum * 3 % 10 + 6;
-            if (Bomb.GetSerialNumberNumbers().Count() < Bomb.GetSerialNumberLetters().Count())
-                keyNum = keyNum * 3 % 10 + 7;
+                keyNum = (keyNum * 2) + 3;
+            keyNum %= 10;
 
+            if (Bomb.IsIndicatorOff(Indicator.MSA))
+                keyNum = (keyNum * 3) + 6;
+            keyNum %= 10;
+
+            if (Bomb.GetSerialNumberNumbers().Count() > Bomb.GetSerialNumberLetters().Count())
+                keyNum = (keyNum * 2) + 4;
+            else
+                keyNum = (keyNum * 3) + 7;
+            keyNum %= 10;
+
+            if (Bomb.GetSerialNumberNumbers().Last() % 2 == 0)
+                keyNum = (keyNum * 2) + 5;
+            else
+                keyNum = (keyNum * 3) + 8;
             keyNum %= 10;
         }
 
