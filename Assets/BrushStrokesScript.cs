@@ -26,7 +26,6 @@ public class BrushStrokesScript : MonoBehaviour
     private int[] colors = new int[9];
     private readonly static char[] literallyJustTheEntireAlphabet = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
     private readonly static char[] andAlsoSomeNumbers = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-    private readonly static string vowels = "AEIOU";
     private readonly static string[] colorNames = { "red", "orange", "yellow", "lime", "green", "cyan", "sky", "blue", "purple", "magenta", "brown", "white", "gray", "black", "pink" };
     private int keyNum = 0;
 
@@ -170,8 +169,8 @@ public class BrushStrokesScript : MonoBehaviour
             { false, false, false, false, false, false }
         }, // 22nd symbol
         {
-            { true, true, false, true, false, true },
-            { true, false, true, true, true, false },
+            { true, false, false, true, true, false },
+            { true, true, true, true, true, true },
             { false, false, false, false, false, false },
             { false, false, false, false, false, false }
         }, // 23rd symbol
