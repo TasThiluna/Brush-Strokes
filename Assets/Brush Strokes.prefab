@@ -495,8 +495,8 @@ GameObject:
   - component: {fileID: 114851581346399680}
   - component: {fileID: 114187609726364552}
   - component: {fileID: 114959796819332236}
-  - component: {fileID: 114712939128419416}
   - component: {fileID: 114777182900738578}
+  - component: {fileID: 114990822830256030}
   m_Layer: 0
   m_Name: Brush Strokes
   m_TagString: Untagged
@@ -4171,18 +4171,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShaderNames:
   - Sprites/Default
---- !u!114 &114712939128419416
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1372786457556416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cadefbb4e8c0c743893b8a7efee5ac5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _colorblindMode: 1
 --- !u!114 &114744856500836976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4249,7 +4237,7 @@ MonoBehaviour:
   Module: {fileID: 114187609726364552}
   Audio: {fileID: 114851581346399680}
   Bomb: {fileID: 114959796819332236}
-  Colorblind: {fileID: 114712939128419416}
+  Colorblind: {fileID: 114990822830256030}
   btnSelectables:
   - {fileID: 114048048546698074}
   - {fileID: 114832354733401448}
@@ -4544,6 +4532,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShaderNames:
   - Standard
+--- !u!114 &114990822830256030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1372786457556416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1cfb889a07d5fd4e9baed7960bb397f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colorblindMode: 0
 --- !u!135 &135018411176975876
 SphereCollider:
   m_ObjectHideFlags: 1
