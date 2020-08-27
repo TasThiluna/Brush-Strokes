@@ -387,7 +387,6 @@ public class BrushStrokesScript : MonoBehaviour
                 { 220, 155 },
                 { 252, 87 }
             };
-
             if (Bomb.GetSerialNumberNumbers().Count() == 2)
             {
                 firstNumber = Bomb.GetSerialNumberNumbers().First() * 10 + Bomb.GetSerialNumberNumbers().Last() - Bomb.GetSerialNumberNumbers().First() * Bomb.GetSerialNumberNumbers().Last();
@@ -460,36 +459,34 @@ public class BrushStrokesScript : MonoBehaviour
 
             else if (Bomb.GetSerialNumberNumbers().Count() == 4)
             {
-                firstNumber = Bomb.GetSerialNumberNumbers().First();
-                secondNumber = Bomb.GetSerialNumberNumbers().Skip(1).First();
-                thirdNumber = Bomb.GetSerialNumberNumbers().Skip(2).First();
-                fourthNumber = Bomb.GetSerialNumberNumbers().Last();
+                var sn = Bomb.GetSerialNumberNumbers().ToArray();
+                firstNumber = sn[0];
+                secondNumber = sn[1];
+                thirdNumber = sn[2];
+                fourthNumber = sn[3];
 
                 if (secondNumber == 0)
                     secondNumber = 1;
                 if (fourthNumber == 0)
                     secondNumber = 1;
 
-                int intDivided = firstNumber / secondNumber;
-                float floatDivided = firstNumber / secondNumber;
+                var tableFirst = 0;
+                var tableSecond = 0;
 
-                if (intDivided == floatDivided)
-                    firstNumber = intDivided;
+                if (firstNumber % secondNumber == 0)
+                    tableFirst = firstNumber / secondNumber;
                 else
-                    firstNumber = firstNumber + secondNumber;
+                    tableFirst = firstNumber + secondNumber;
 
-                intDivided = thirdNumber / fourthNumber;
-                floatDivided = thirdNumber / fourthNumber;
-
-                if (intDivided == floatDivided)
-                    secondNumber = intDivided;
+                if (thirdNumber % fourthNumber == 0)
+                    tableSecond = thirdNumber / fourthNumber;
                 else
-                    secondNumber = thirdNumber + fourthNumber;
+                    tableSecond = thirdNumber + fourthNumber;
 
-                firstNumber %= 4;
-                secondNumber %= 4;
+                tableFirst %= 4;
+                tableSecond %= 4;
 
-                keyNum = tableOne[secondNumber, firstNumber];
+                keyNum = tableOne[tableSecond, tableFirst];
             }
         }
 
@@ -562,11 +559,11 @@ public class BrushStrokesScript : MonoBehaviour
 
         else if (colors[4] == 7) // if center point is blue...
         {
-            if (Bomb.GetSerialNumberNumbers().First() == Bomb.GetSerialNumberNumbers().Last() && Bomb.GetBatteryCount().Equals(0))
+            if (Bomb.GetSerialNumberNumbers().First() == Bomb.GetSerialNumberNumbers().Last() && Bomb.GetBatteryCount() == 0)
                 keyNum = 1;
             else if (Bomb.GetIndicators().Contains("CLR"))
                 keyNum = 8;
-            else if (Bomb.GetSerialNumberLetters().Contains('X') && Bomb.GetSerialNumberLetters().Contains('Y') && Bomb.GetSerialNumberLetters().Contains('Z'))
+            else if (Bomb.GetSerialNumberLetters().Contains('X') || Bomb.GetSerialNumberLetters().Contains('Y') | Bomb.GetSerialNumberLetters().Contains('Z'))
                 keyNum = 20;
             else if (Bomb.GetPortCount() >= 5)
                 keyNum = 30;
