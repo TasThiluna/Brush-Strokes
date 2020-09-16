@@ -381,12 +381,7 @@ public class BrushStrokesScript : MonoBehaviour
                 { 116, 158, 240, 195 },
                 { 269, 204, 121, 1 }
             };
-
-            int[,] tableTwo =
-            {
-                { 220, 155 },
-                { 252, 87 }
-            };
+            
             if (Bomb.GetSerialNumberNumbers().Count() == 2)
             {
                 firstNumber = Bomb.GetSerialNumberNumbers().First() * 10 + Bomb.GetSerialNumberNumbers().Last() - Bomb.GetSerialNumberNumbers().First() * Bomb.GetSerialNumberNumbers().Last();
@@ -418,42 +413,41 @@ public class BrushStrokesScript : MonoBehaviour
                     thirdNumber += Bomb.GetBatteryCount();
                 }
 
-                int even = 0, odd = 0;
+                int even = 0;
+                int[][] OddEvenTableBullshit = new int[2][]{
+                new int[] {87, 252},
+                new int[] {155, 220}
+                };
 
                 if (firstNumber % 2 == 0)
                     even++;
-                else
-                    odd++;
                 if (secondNumber % 2 == 0)
                     even++;
-                else
-                    odd++;
                 if (thirdNumber % 2 == 0)
                     even++;
-                else
-                    odd++;
-                if (even == 2)
+                
+                if (even == 2) {
                     keyNum = 220;
-                else if (odd == 2)
-                {
-                    if (firstNumber < thirdNumber && firstNumber < secondNumber)
-                        keyNum = tableTwo[secondNumber % 2, thirdNumber % 2];
-                    else if (secondNumber < firstNumber && secondNumber < thirdNumber)
-                        keyNum = tableTwo[firstNumber % 2, thirdNumber % 2];
-                    else
-                        keyNum = tableTwo[firstNumber % 2, secondNumber % 2];
+                    return;
+                }
+                else if (even == 1) {
+                Haha:
+                if ((firstNumber == secondNumber) || (firstNumber == thirdNumber))
+                    keyNum = OddEvenTableBullshit[firstNumber % 2][firstNumber % 2];
+                else if (secondNumber == thirdNumber)
+                    keyNum = OddEvenTableBullshit[secondNumber % 2][secondNumber % 2];
+                else if (firstNumber < secondNumber && firstNumber < thirdNumber)
+                    keyNum = OddEvenTableBullshit[thirdNumber % 2][secondNumber % 2];
+                else if (secondNumber < thirdNumber && secondNumber < firstNumber)
+                    keyNum = OddEvenTableBullshit[firstNumber % 2][thirdNumber % 2];
+                else
+                    keyNum = OddEvenTableBullshit[firstNumber % 2][secondNumber % 2];
                 }
                 else if (even == 3)
-                    keyNum = 220;
-                else
-                {
+                    keyNum = OddEvenTableBullshit[int.Parse(Bomb.GetSerialNumberNumbers().ToString()[2]) % 2][int.Parse(Bomb.GetSerialNumberNumbers().ToString()[1]) % 2];
+                else {
                     secondNumber += 2;
-                    if (firstNumber < thirdNumber && firstNumber < secondNumber)
-                        keyNum = tableTwo[secondNumber % 2, thirdNumber % 2];
-                    else if (secondNumber < firstNumber && secondNumber < thirdNumber)
-                        keyNum = tableTwo[firstNumber % 2, thirdNumber % 2];
-                    else
-                        keyNum = tableTwo[firstNumber % 2, secondNumber % 2];
+                    goto Haha;
                 }
             }
 
