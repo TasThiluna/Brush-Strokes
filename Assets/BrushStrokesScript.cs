@@ -373,115 +373,11 @@ public class BrushStrokesScript : MonoBehaviour
 
         else if (colors[4] == 4) // if center point is green...
         {
-            int firstNumber, secondNumber, thirdNumber, fourthNumber;
-            int[,] tableOne =
-            {
-                { 260, 66, 164, 152 },
-                { 73, 194, 99, 202 },
-                { 116, 158, 240, 195 },
-                { 269, 204, 121, 1 }
-            };
-            
-            if (Bomb.GetSerialNumberNumbers().Count() == 2)
-            {
-                firstNumber = Bomb.GetSerialNumberNumbers().First() * 10 + Bomb.GetSerialNumberNumbers().Last() - Bomb.GetSerialNumberNumbers().First() * Bomb.GetSerialNumberNumbers().Last();
-                secondNumber = Bomb.GetSerialNumberNumbers().Last() * 10 + Bomb.GetSerialNumberNumbers().First() - Bomb.GetSerialNumberNumbers().Last() * Bomb.GetSerialNumberNumbers().First();
-
-                if (firstNumber > secondNumber)
-                {
-                    int swap = secondNumber;
-                    secondNumber = firstNumber;
-                    firstNumber = swap;
-                }
-
-                firstNumber %= 3;
-                secondNumber %= 4;
-
-                keyNum = tableOne[secondNumber, firstNumber];
-            }
-
-            else if (Bomb.GetSerialNumberNumbers().Count() == 3)
-            {
-                firstNumber = Bomb.GetSerialNumberNumbers().First();
-                secondNumber = Bomb.GetSerialNumberNumbers().Skip(1).First();
-                thirdNumber = Bomb.GetSerialNumberNumbers().Skip(2).First();
-
-                if (firstNumber * secondNumber > thirdNumber * secondNumber - firstNumber)
-                {
-                    firstNumber += Bomb.GetBatteryCount();
-                    secondNumber += Bomb.GetBatteryCount();
-                    thirdNumber += Bomb.GetBatteryCount();
-                }
-
-                int even = 0;
-                int[][] OddEvenTableBullshit = new int[2][]{
-                new int[] {87, 252},
-                new int[] {155, 220}
-                };
-
-                if (firstNumber % 2 == 0)
-                    even++;
-                if (secondNumber % 2 == 0)
-                    even++;
-                if (thirdNumber % 2 == 0)
-                    even++;
-                
-                if (even == 2) {
-                    keyNum = 220;
-                    return;
-                }
-                else if (even == 1) {
-                Haha:
-                if ((firstNumber == secondNumber) || (firstNumber == thirdNumber))
-                    keyNum = OddEvenTableBullshit[firstNumber % 2][firstNumber % 2];
-                else if (secondNumber == thirdNumber)
-                    keyNum = OddEvenTableBullshit[secondNumber % 2][secondNumber % 2];
-                else if (firstNumber < secondNumber && firstNumber < thirdNumber)
-                    keyNum = OddEvenTableBullshit[thirdNumber % 2][secondNumber % 2];
-                else if (secondNumber < thirdNumber && secondNumber < firstNumber)
-                    keyNum = OddEvenTableBullshit[firstNumber % 2][thirdNumber % 2];
-                else
-                    keyNum = OddEvenTableBullshit[firstNumber % 2][secondNumber % 2];
-                }
-                else if (even == 3)
-                    keyNum = OddEvenTableBullshit[int.Parse(Bomb.GetSerialNumberNumbers().ToString()[2]) % 2][int.Parse(Bomb.GetSerialNumberNumbers().ToString()[1]) % 2];
-                else {
-                    secondNumber += 2;
-                    goto Haha;
-                }
-            }
-
-            else if (Bomb.GetSerialNumberNumbers().Count() == 4)
-            {
-                var sn = Bomb.GetSerialNumberNumbers().ToArray();
-                firstNumber = sn[0];
-                secondNumber = sn[1];
-                thirdNumber = sn[2];
-                fourthNumber = sn[3];
-
-                if (secondNumber == 0)
-                    secondNumber = 1;
-                if (fourthNumber == 0)
-                    secondNumber = 1;
-
-                var tableFirst = 0;
-                var tableSecond = 0;
-
-                if (firstNumber % secondNumber == 0)
-                    tableFirst = firstNumber / secondNumber;
-                else
-                    tableFirst = firstNumber + secondNumber;
-
-                if (thirdNumber % fourthNumber == 0)
-                    tableSecond = thirdNumber / fourthNumber;
-                else
-                    tableSecond = thirdNumber + fourthNumber;
-
-                tableFirst %= 4;
-                tableSecond %= 4;
-
-                keyNum = tableOne[tableSecond, tableFirst];
-            }
+            var x = 0;
+            foreach (char c in Bomb.GetSerialNumberLetters())
+                x += Array.IndexOf(literallyJustTheEntireAlphabet, c) + 1;
+            x += Bomb.GetOnIndicators().Count();
+            keyNum = x;
         }
 
         else if (colors[4] == 5) // if center point is cyan...
@@ -513,7 +409,7 @@ public class BrushStrokesScript : MonoBehaviour
 
             if (Bomb.GetSerialNumberNumbers().Count() > Bomb.GetSerialNumberLetters().Count())
                 keyNum = (keyNum * 2) + 4;
-            else
+            else if (Bomb.GetSerialNumberNumbers().Count() < Bomb.GetSerialNumberLetters().Count())
                 keyNum = (keyNum * 3) + 7;
             keyNum %= 10;
 

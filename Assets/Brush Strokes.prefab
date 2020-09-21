@@ -495,8 +495,8 @@ GameObject:
   - component: {fileID: 114851581346399680}
   - component: {fileID: 114187609726364552}
   - component: {fileID: 114959796819332236}
-  - component: {fileID: 114777182900738578}
-  - component: {fileID: 114990822830256030}
+  - component: {fileID: 114616904132820124}
+  - component: {fileID: 114523401644670470}
   m_Layer: 0
   m_Name: Brush Strokes
   m_TagString: Untagged
@@ -3971,6 +3971,91 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShaderNames:
   - KT/Mobile/DiffuseTint
+--- !u!114 &114523401644670470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1372786457556416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f16018c2f8280c747866e10a0e19f58f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Module: {fileID: 114187609726364552}
+  Audio: {fileID: 114851581346399680}
+  Bomb: {fileID: 114959796819332236}
+  Colorblind: {fileID: 114616904132820124}
+  btnSelectables:
+  - {fileID: 114048048546698074}
+  - {fileID: 114832354733401448}
+  - {fileID: 114197246412465666}
+  - {fileID: 114302915252803452}
+  - {fileID: 114248318876629174}
+  - {fileID: 114416010605568932}
+  - {fileID: 114966745890946368}
+  - {fileID: 114404322641299132}
+  - {fileID: 114104816646925338}
+  btnRenderers:
+  - {fileID: 23596261492072698}
+  - {fileID: 23230800032206840}
+  - {fileID: 23541018200226932}
+  - {fileID: 23413715665799962}
+  - {fileID: 23273248845861738}
+  - {fileID: 23068123158492106}
+  - {fileID: 23527487036240652}
+  - {fileID: 23782829410690370}
+  - {fileID: 23876983292977124}
+  btnColors:
+  - {fileID: 2100000, guid: 7df6bf588e9889249b71e235ac68799b, type: 2}
+  - {fileID: 2100000, guid: 3a6c953f9642d744080d2b7e7add8e95, type: 2}
+  - {fileID: 2100000, guid: ef7dbb4d9647f054382a28b1f80b4f7e, type: 2}
+  - {fileID: 2100000, guid: 01c6b4167fb5eb64d808c7d8165c8bd8, type: 2}
+  - {fileID: 2100000, guid: 30d94795db1942749a667a6be11dc7fd, type: 2}
+  - {fileID: 2100000, guid: c8961284b42871543abd7f2c5fe3d005, type: 2}
+  - {fileID: 2100000, guid: fe3f082ddbcfe4c4396c8f374f4ca441, type: 2}
+  - {fileID: 2100000, guid: d1f726eb6d6c5c74c827e6bc64682a8c, type: 2}
+  - {fileID: 2100000, guid: b9d30653505fd1a48b3406d1f3fa76b2, type: 2}
+  - {fileID: 2100000, guid: a399bdf407897d540a6dcc4b262b54a7, type: 2}
+  - {fileID: 2100000, guid: 509359a7992bbbf47a843c08dd01fb30, type: 2}
+  - {fileID: 2100000, guid: 9bdd00ae8c5ca4c4f85f7a9914ae8282, type: 2}
+  - {fileID: 2100000, guid: b667fa48a953f7a4d862ab323983e1ff, type: 2}
+  - {fileID: 2100000, guid: 4ae2143b3f12a1944b90b74316a9c7ec, type: 2}
+  - {fileID: 2100000, guid: 3b1c97566ed2b1d47ac3fd68aae36bf2, type: 2}
+  horizontalStrokes:
+  - {fileID: 212702393412310736}
+  - {fileID: 212188946037006688}
+  - {fileID: 212469921809258624}
+  - {fileID: 212143711330130804}
+  - {fileID: 212892999433352426}
+  - {fileID: 212526180917731946}
+  verticalStrokes:
+  - {fileID: 212321257935060988}
+  - {fileID: 212417582157305076}
+  - {fileID: 212100582756343024}
+  - {fileID: 212049720915163658}
+  - {fileID: 212276211605827674}
+  - {fileID: 212421152942541642}
+  tlbrStrokes:
+  - {fileID: 212858461924203752}
+  - {fileID: 212634961380306528}
+  - {fileID: 212641900452696436}
+  - {fileID: 212520664382079658}
+  trblStrokes:
+  - {fileID: 212798983461067266}
+  - {fileID: 212664742523378792}
+  - {fileID: 212777923327971120}
+  - {fileID: 212692615079729466}
+  colorblindText:
+  - {fileID: 102137953257601754}
+  - {fileID: 102518913813833032}
+  - {fileID: 102458811861685052}
+  - {fileID: 102267659673426228}
+  - {fileID: 102542775060366916}
+  - {fileID: 102641320098387580}
+  - {fileID: 102205231567938190}
+  - {fileID: 102040002632860008}
+  - {fileID: 102645655886775072}
 --- !u!114 &114532377750881828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4075,6 +4160,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HighlightScale: {x: 1, y: 1, z: 1}
   OutlineAmount: 0
+--- !u!114 &114616904132820124
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1372786457556416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cadefbb4e8c0c743893b8a7efee5ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colorblindMode: 0
 --- !u!114 &114652579680366094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4223,91 +4320,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShaderNames:
   - GUI/KT 3D Text
---- !u!114 &114777182900738578
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1372786457556416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f16018c2f8280c747866e10a0e19f58f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Module: {fileID: 114187609726364552}
-  Audio: {fileID: 114851581346399680}
-  Bomb: {fileID: 114959796819332236}
-  Colorblind: {fileID: 114990822830256030}
-  btnSelectables:
-  - {fileID: 114048048546698074}
-  - {fileID: 114832354733401448}
-  - {fileID: 114197246412465666}
-  - {fileID: 114302915252803452}
-  - {fileID: 114248318876629174}
-  - {fileID: 114416010605568932}
-  - {fileID: 114966745890946368}
-  - {fileID: 114404322641299132}
-  - {fileID: 114104816646925338}
-  btnRenderers:
-  - {fileID: 23596261492072698}
-  - {fileID: 23230800032206840}
-  - {fileID: 23541018200226932}
-  - {fileID: 23413715665799962}
-  - {fileID: 23273248845861738}
-  - {fileID: 23068123158492106}
-  - {fileID: 23527487036240652}
-  - {fileID: 23782829410690370}
-  - {fileID: 23876983292977124}
-  btnColors:
-  - {fileID: 2100000, guid: 7df6bf588e9889249b71e235ac68799b, type: 2}
-  - {fileID: 2100000, guid: 3a6c953f9642d744080d2b7e7add8e95, type: 2}
-  - {fileID: 2100000, guid: ef7dbb4d9647f054382a28b1f80b4f7e, type: 2}
-  - {fileID: 2100000, guid: 30d94795db1942749a667a6be11dc7fd, type: 2}
-  - {fileID: 2100000, guid: 01c6b4167fb5eb64d808c7d8165c8bd8, type: 2}
-  - {fileID: 2100000, guid: c8961284b42871543abd7f2c5fe3d005, type: 2}
-  - {fileID: 2100000, guid: fe3f082ddbcfe4c4396c8f374f4ca441, type: 2}
-  - {fileID: 2100000, guid: d1f726eb6d6c5c74c827e6bc64682a8c, type: 2}
-  - {fileID: 2100000, guid: b9d30653505fd1a48b3406d1f3fa76b2, type: 2}
-  - {fileID: 2100000, guid: a399bdf407897d540a6dcc4b262b54a7, type: 2}
-  - {fileID: 2100000, guid: 509359a7992bbbf47a843c08dd01fb30, type: 2}
-  - {fileID: 2100000, guid: 9bdd00ae8c5ca4c4f85f7a9914ae8282, type: 2}
-  - {fileID: 2100000, guid: b667fa48a953f7a4d862ab323983e1ff, type: 2}
-  - {fileID: 2100000, guid: 4ae2143b3f12a1944b90b74316a9c7ec, type: 2}
-  - {fileID: 2100000, guid: 3b1c97566ed2b1d47ac3fd68aae36bf2, type: 2}
-  horizontalStrokes:
-  - {fileID: 212702393412310736}
-  - {fileID: 212188946037006688}
-  - {fileID: 212469921809258624}
-  - {fileID: 212143711330130804}
-  - {fileID: 212892999433352426}
-  - {fileID: 212526180917731946}
-  verticalStrokes:
-  - {fileID: 212321257935060988}
-  - {fileID: 212417582157305076}
-  - {fileID: 212100582756343024}
-  - {fileID: 212049720915163658}
-  - {fileID: 212276211605827674}
-  - {fileID: 212421152942541642}
-  tlbrStrokes:
-  - {fileID: 212858461924203752}
-  - {fileID: 212634961380306528}
-  - {fileID: 212641900452696436}
-  - {fileID: 212520664382079658}
-  trblStrokes:
-  - {fileID: 212798983461067266}
-  - {fileID: 212664742523378792}
-  - {fileID: 212777923327971120}
-  - {fileID: 212692615079729466}
-  colorblindText:
-  - {fileID: 102137953257601754}
-  - {fileID: 102518913813833032}
-  - {fileID: 102458811861685052}
-  - {fileID: 102267659673426228}
-  - {fileID: 102542775060366916}
-  - {fileID: 102641320098387580}
-  - {fileID: 102205231567938190}
-  - {fileID: 102040002632860008}
-  - {fileID: 102645655886775072}
 --- !u!114 &114788860507471074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4532,18 +4544,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShaderNames:
   - Standard
---- !u!114 &114990822830256030
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1372786457556416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1cfb889a07d5fd4e9baed7960bb397f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _colorblindMode: 0
 --- !u!135 &135018411176975876
 SphereCollider:
   m_ObjectHideFlags: 1

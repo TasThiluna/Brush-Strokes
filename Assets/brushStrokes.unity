@@ -152,13 +152,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114777182900738578, guid: f48745d907960b3478975166c3d3e4d9,
-        type: 2}
-      propertyPath: Colorblind
-      value: 
-      objectReference: {fileID: 1233876379}
-    m_RemovedComponents:
-    - {fileID: 114990822830256030, guid: f48745d907960b3478975166c3d3e4d9, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f48745d907960b3478975166c3d3e4d9, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &742068254
@@ -307,23 +301,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1233876378 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1372786457556416, guid: f48745d907960b3478975166c3d3e4d9,
-    type: 2}
-  m_PrefabInternal: {fileID: 654900005}
---- !u!114 &1233876379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1233876378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cadefbb4e8c0c743893b8a7efee5ac5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _colorblindMode: 0
 --- !u!1001 &1729322661
 Prefab:
   m_ObjectHideFlags: 0
