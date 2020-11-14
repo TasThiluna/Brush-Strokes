@@ -8,7 +8,6 @@ using System.Text.RegularExpressions;
 
 public class BrushStrokesScript : MonoBehaviour
 {
-
     public KMBombModule Module;
     public KMAudio Audio;
     public KMBombInfo Bomb;
@@ -207,7 +206,7 @@ public class BrushStrokesScript : MonoBehaviour
         {
             { false, false, false, false, false, false },
             { true, false, true, true, false, true },
-            { false, false, false, false, false, false },
+            { true, false, false, true, false, false },
             { false, false, false, false, false, false }
         }, // 29th symbol
         {
