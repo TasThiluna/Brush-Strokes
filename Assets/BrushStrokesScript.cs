@@ -402,19 +402,21 @@ public class BrushStrokesScript : MonoBehaviour
                 keyNum = (keyNum * 2) + 3;
             keyNum %= 10;
 
-            if (Bomb.IsIndicatorOff(Indicator.MSA))
-                keyNum = (keyNum * 3) + 6;
-            keyNum %= 10;
-
             if (Bomb.GetSerialNumberNumbers().Count() > Bomb.GetSerialNumberLetters().Count())
                 keyNum = (keyNum * 2) + 4;
-            else if (Bomb.GetSerialNumberNumbers().Count() < Bomb.GetSerialNumberLetters().Count())
-                keyNum = (keyNum * 3) + 7;
-            keyNum %= 10;
 
             if (Bomb.GetSerialNumberNumbers().Last() % 2 == 0)
                 keyNum = (keyNum * 2) + 5;
-            else
+
+            if (Bomb.IsIndicatorOff(Indicator.NSA))
+                keyNum = (keyNum * 3) + 6;
+            keyNum %= 10;
+
+            if (Bomb.GetSerialNumberNumbers().Count() < Bomb.GetSerialNumberLetters().Count())
+                keyNum = (keyNum * 3) + 7;
+            keyNum %= 10;
+            
+            if (Bomb.GetSerialNumberNumbers().Last() % 2 == 1)
                 keyNum = (keyNum * 3) + 8;
             keyNum %= 10;
         }
