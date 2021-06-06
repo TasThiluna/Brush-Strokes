@@ -381,44 +381,10 @@ public class BrushStrokesScript : MonoBehaviour
 
         else if (colors[4] == 5) // if center point is cyan...
         {
-            if (Bomb.IsPortPresent(Port.Parallel))
-                keyNum++;
-            keyNum %= 10;
-
-            if (Bomb.GetSerialNumberLetters().Any(x => "AEIOU".Contains(x)))
-                keyNum++;
-            else
-                keyNum += 2;
-            keyNum %= 10;
-
-            if (Bomb.IsPortPresent(Port.Serial))
-                keyNum += 2;
-            keyNum %= 10;
-
-            keyNum += 2; // assume no modules are solved, so > half solved rule always applies (likewise, < half solved rule never applies)
-            keyNum %= 10;
-
-            if (Bomb.IsIndicatorOn(Indicator.FRK))
-                keyNum = (keyNum * 2) + 3;
-            keyNum %= 10;
-
-            if (Bomb.GetSerialNumberNumbers().Count() > Bomb.GetSerialNumberLetters().Count())
-                keyNum = (keyNum * 2) + 4;
-
             if (Bomb.GetSerialNumberNumbers().Last() % 2 == 0)
-                keyNum = (keyNum * 2) + 5;
-
-            if (Bomb.IsIndicatorOff(Indicator.NSA))
-                keyNum = (keyNum * 3) + 6;
-            keyNum %= 10;
-
-            if (Bomb.GetSerialNumberNumbers().Count() < Bomb.GetSerialNumberLetters().Count())
-                keyNum = (keyNum * 3) + 7;
-            keyNum %= 10;
-            
-            if (Bomb.GetSerialNumberNumbers().Last() % 2 == 1)
-                keyNum = (keyNum * 3) + 8;
-            keyNum %= 10;
+                keyNum = (Bomb.GetSolvableModuleNames().Count() % 11) + 1;
+            else
+                keyNum = ((Bomb.GetBatteryCount() + Bomb.GetIndicators().Count()) % 5) + 1;
         }
 
         else if (colors[4] == 6) // if center point is sky...

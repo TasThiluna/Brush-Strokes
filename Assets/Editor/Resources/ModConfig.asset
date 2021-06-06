@@ -13,10 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: brushStrokes
   title: Brush Strokes
+  author: 
   description: "Who thought it was a good idea to do brush strokes without a brush?
     Not to mention on a bomb too...\r\n\r\nModule idea by Blananas2 and TasThing,
     implemented by EpicToast, maintained by TasThing.\r\n\r\nManual HTML: https://ktane.timwi.de/HTML/Brush%20Strokes.html\r\nManual
     PDF: https://ktane.timwi.de/PDF/Brush%20Strokes.pdf"
-  version: v1.0
+  version: 1.2
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 278e5648f32d6f0458a692ea7763d2f5, type: 3}
